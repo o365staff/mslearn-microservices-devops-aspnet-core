@@ -10,6 +10,18 @@ on:
 jobs:
   build-and-push-docker-image:
     runs-on: ubuntu-latest
+    name: eShop build
+
+on:
+  push:
+    paths:
+    - 'src/Services/Coupon/**'
+    - 'tests/Services/Coupon/**'
+    branches: [ main ]
+
+jobs:
+  build-and-push-docker-image:
+    runs-on: ubuntu-latest
     steps:
     - name: Get code from the repository
       uses: actions/checkout@v1
